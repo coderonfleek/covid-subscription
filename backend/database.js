@@ -9,7 +9,8 @@ const mongo = new MongoMemoryServer();
 async function startDatabase() {
   const mongoDBURL = await mongo.getConnectionString();
   const connection = await MongoClient.connect(mongoDBURL, {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
   });
 
   //Seed Database
