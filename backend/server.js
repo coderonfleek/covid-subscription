@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 let bodyParser = require("body-parser");
 const { startDatabase } = require("./database");
+let cors = require("cors");
 
 const TwilioService = require("./messaging");
 
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
+app.use(cors());
 
 const dbSetup = async (req, res, next) => {
   if (!req.db) {
