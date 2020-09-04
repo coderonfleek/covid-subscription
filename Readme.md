@@ -28,3 +28,13 @@ TWILIO_SENDGRID_VERIFIED_EMAIL=XXX-XX-XXXXX
 - Run the application with `npm run serve`
 - Navigate to `http://localhost:8080/` to view the users area
 - Navigate to `http://localhost:8080/admin` to view the admin area
+
+## Screenshots
+
+Home page
+
+![Client Home](home.png)
+
+Admin
+
+![Admin Page](admin.png)
