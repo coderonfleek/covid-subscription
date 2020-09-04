@@ -18,16 +18,16 @@
                 ></v-text-field>
 
                 <v-text-field
-                  label="Phone"
+                  label="Phone (Ext)(Number)"
                   v-model="subscriptionForm.phone"
-                  prepend-icon="mdi-account"
+                  prepend-icon="mdi-phone"
                   type="tel"
                 ></v-text-field>
 
                 <v-text-field
                   label="Email"
                   v-model="subscriptionForm.email"
-                  prepend-icon="mdi-account"
+                  prepend-icon="mdi-email"
                   type="email"
                 ></v-text-field>
 
@@ -35,7 +35,7 @@
                   :items="locations"
                   item-text="name"
                   item-value="name"
-                  prepend-icon="mdi-account"
+                  prepend-icon="mdi-map-marker"
                   label="Location"
                   v-model="subscriptionForm.location"
                 ></v-select>

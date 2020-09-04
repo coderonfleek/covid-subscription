@@ -25,7 +25,7 @@ async function sendMessage(recipient, message) {
 }
 
 async function sendMail(msgObject) {
-  msgObject.from = "fikfikky@gmail.com";
+  msgObject.from = process.env.TWILIO_SENDGRID_VERIFIED_EMAIL;
   const mailSentResponse = await sgMail.send(msgObject);
 
   return mailSentResponse;
