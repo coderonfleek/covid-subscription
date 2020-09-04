@@ -32,39 +32,6 @@ app.get("/", (req, res) => {
   res.send("Welcome to the COVID Subscription API!");
 });
 
-app.post("/echo", (req, res) => {
-  res.json(req.body);
-});
-
-app.post("/send", async (req, res) => {
-  try {
-    //Use an array of numbers for sending to multiple recipients
-    await TwilioService.sendMessage(
-      "+2347068006051",
-      TwilioService.buildAlertMessage(req.body)
-    );
-    res.status(200).send("Sent successfully");
-  } catch (error) {
-    console.log(error);
-    res.end();
-  }
-});
-
-app.post("/sendmail", async (req, res) => {
-  try {
-    let mailObject = {
-      to: "fik4christ@yahoo.com", //['recipient1@example.org', 'recipient2@example.org'] For multiple
-      subject: "COVID Alerts",
-      html: TwilioService.buildAlertMail(req.body)
-    };
-    await TwilioService.sendMail(mailObject);
-    res.status(200).send("Mail Sent successfully");
-  } catch (error) {
-    console.log(error);
-    res.end();
-  }
-});
-
 app.get("/locations", async (req, res) => {
   const locations = await req.db.collection("locations").find().toArray();
 
